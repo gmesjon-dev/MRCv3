@@ -2,28 +2,8 @@ import tailwindcss from '@tailwindcss/postcss';
 import vinext from 'vinext';
 import { defineConfig } from 'vite';
 
-const LOCAL_D1_PLACEHOLDER_DATABASE_ID = '00000000-0000-4000-8000-000000000000';
-
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
-
-const localBindingConfig = {
-  main: 'vinext/server/fetch-handler',
-  compatibility_flags: ['nodejs_compat'],
-  d1_databases: [
-    {
-      binding: 'DB',
-      database_name: 'mrc-digital-db-local',
-      database_id: LOCAL_D1_PLACEHOLDER_DATABASE_ID,
-    },
-  ],
-  r2_buckets: [
-    {
-      binding: 'FILES',
-      bucket_name: 'mrc-digital-files-local',
-    },
-  ],
-};
 
 export default defineConfig(async () => {
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
@@ -44,7 +24,6 @@ export default defineConfig(async () => {
       vinext(),
       cloudflare({
         viteEnvironment: { name: 'rsc', childEnvironments: ['ssr'] },
-        config: localBindingConfig,
       }),
     ],
   };
