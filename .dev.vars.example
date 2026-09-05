@@ -1,0 +1,11 @@
+# Copie este arquivo para `.dev.vars` (nunca commitado) para rodar `pnpm dev` localmente.
+
+# Em desenvolvimento local não há Cloudflare Access na frente do Worker, então
+# defina um e-mail aqui para simular um usuário autenticado. Isso só funciona em
+# build de desenvolvimento (import.meta.env.DEV) e nunca em produção.
+LOCAL_DEV_USER_EMAIL=voce@suaempresa.com.br
+
+# Só são necessários localmente se você quiser testar a verificação real do Access
+# (ex: rodando `wrangler dev --remote`). Em produção eles vão em wrangler.jsonc.
+# CF_ACCESS_TEAM_DOMAIN=suaempresa.cloudflareaccess.com
+# CF_ACCESS_AUD=aud-tag-da-aplicacao-de-access

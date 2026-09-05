@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1788283468611,
+      "tag": "0000_good_tombstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1788570474565,
+      "tag": "0001_chemical_beyonder",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1788572570124,
+      "tag": "0002_short_cerise",
+      "breakpoints": true
+    }
+  ]
+}
