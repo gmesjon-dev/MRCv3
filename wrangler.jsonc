@@ -11,17 +11,17 @@
     "enabled": true,
   },
 
-  // Rode `wrangler d1 create mrc-digital-db` e cole o database_id retornado aqui.
+  // Banco D1 usado pelo sistema.
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "mrc-digital-db",
-      "database_id": "SUBSTITUA_PELO_ID_DO_SEU_BANCO_D1",
+      "database_id": "4eee6a67-8175-48de-8eee-e9f556b63822",
       "migrations_dir": "drizzle",
     },
   ],
 
-  // Rode `wrangler r2 bucket create mrc-digital-files` (o nome pode ser este mesmo).
+  // Bucket R2 usado pelo sistema.
   "r2_buckets": [
     {
       "binding": "FILES",
