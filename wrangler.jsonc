@@ -1,43 +1,26 @@
 {
-  // Nome do Worker. Vira parte da URL padrão <name>.<seu-subdominio>.workers.dev.
   "name": "grupo-mrc-digital",
   "main": "vinext/server/fetch-handler",
   "compatibility_date": "2026-05-15",
   "compatibility_flags": ["nodejs_compat"],
-  "assets": {
-    "directory": "dist/client",
-  },
-  "observability": {
-    "enabled": true,
-  },
-
-  // Banco D1 usado pelo sistema.
+  "assets": { "directory": "dist/client" },
+  "observability": { "enabled": true },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "mrc-digital-db",
       "database_id": "4eee6a67-8175-48de-8eee-e9f556b63822",
-      "migrations_dir": "drizzle",
-    },
+      "migrations_dir": "drizzle"
+    }
   ],
-
-  // Bucket R2 usado pelo sistema.
   "r2_buckets": [
     {
       "binding": "FILES",
-      "bucket_name": "mrc-digital-files",
-    },
+      "bucket_name": "mrc-digital-files"
+    }
   ],
-
-  // Domínio da sua equipe no Cloudflare Zero Trust (Settings > Custom Pages, ou a URL
-  // que aparece ao criar uma aplicação em Access) e o Application Audience (AUD) Tag
-  // da aplicação de Access que protege este Worker.
   "vars": {
-    "CF_ACCESS_TEAM_DOMAIN": "SUBSTITUA.cloudflareaccess.com",
-    "CF_ACCESS_AUD": "SUBSTITUA_PELO_AUD_TAG_DA_APLICACAO_DE_ACCESS",
-  },
-
-  // Opcional: fixe aqui o ID da conta Cloudflare em vez de depender da variável de
-  // ambiente CLOUDFLARE_ACCOUNT_ID no CI. Encontre em dash.cloudflare.com/<account-id>.
-  // "account_id": "SUBSTITUA_PELO_ID_DA_CONTA",
+    "CF_ACCESS_TEAM_DOMAIN": "damp-scene-2279.cloudflareaccess.com",
+    "CF_ACCESS_AUD": "116fbc089d7455a6d9b606034d13c2df1b5a0e9d2d3f4b5c9d12221063922233"
+  }
 }
